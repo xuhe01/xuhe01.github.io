@@ -1,0 +1,71 @@
+# ============================================================
+# GitHub Pages + Jekyll 博客配置
+# 参考: https://docs.github.com/zh/pages/quickstart
+# 修改本文件后需要重启 `bundle exec jekyll serve` 才会生效
+# ============================================================
+
+# ---------- 站点基本信息 ----------
+title: 我的博客
+description: 记录技术、思考与生活的地方。
+author: 你的名字
+email: your-email@example.com
+lang: zh-CN
+
+# 站点地址（把 USERNAME 换成你的 GitHub 用户名）
+url: "https://USERNAME.github.io"
+# 如果仓库名就是 USERNAME.github.io，baseurl 留空即可；
+# 如果是项目站点（仓库名如 my-blog），改为 baseurl: "/my-blog"
+baseurl: ""
+
+# ---------- 主题 ----------
+# GitHub Pages 官方支持的主题之一，无需额外安装
+# 可选: minima, jekyll-theme-cayman, jekyll-theme-minimal, jekyll-theme-hacker 等
+theme: minima
+
+minima:
+  skin: classic          # classic | dark | solarized | auto
+  social_links:
+    - { platform: github, user_url: "https://github.com/USERNAME" }
+    # - { platform: twitter, user_url: "https://twitter.com/USERNAME" }
+    # - { platform: rss, user_url: "/feed.xml" }
+
+# 顶部导航显示的页面
+header_pages:
+  - about.md
+  - archive.md
+
+# ---------- 插件（GitHub Pages 白名单内） ----------
+plugins:
+  - jekyll-feed          # 生成 /feed.xml RSS
+  - jekyll-seo-tag       # 自动生成 SEO meta 标签
+  - jekyll-sitemap       # 生成 /sitemap.xml
+
+# ---------- 文章设置 ----------
+permalink: /:year/:month/:day/:title/
+show_excerpts: true      # 首页显示文章摘要
+excerpt_separator: "<!--more-->"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+
+# ---------- Markdown / 代码高亮 ----------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# ---------- 构建时忽略的文件 ----------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - DEPLOY.md
+  - vendor/
+  - node_modules/
+  - .sass-cache/

@@ -1,0 +1,75 @@
+---
+# 这个空的 Front Matter 是必须的，告诉 Jekyll 处理这个文件
+---
+
+@import "minima";
+
+/* ---------- 自定义样式：在 Minima 主题基础上做少量覆盖 ---------- */
+
+/* 中文字体优化 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica,
+               Arial, sans-serif;
+  line-height: 1.75;
+}
+
+/* 文章标题 */
+.post-title {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* 首页文章列表间距 */
+.post-list > li {
+  margin-bottom: 2.5rem;
+}
+
+.post-list h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* 归档页 */
+.archive-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.archive-list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed #e8e8e8;
+}
+
+.archive-date {
+  display: inline-block;
+  width: 3.5rem;
+  color: #828282;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.archive-tags code {
+  font-size: 0.75em;
+  padding: 1px 5px;
+  margin-left: 2px;
+  background: #f3f3f3;
+  border-radius: 3px;
+}
+
+/* 代码块 */
+pre, code {
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+/* 表格 */
+table {
+  margin-bottom: 1.5rem;
+}
+
+/* 引用块 */
+blockquote {
+  border-left: 4px solid #2a7ae2;
+  color: #555;
+  font-style: normal;
+}

@@ -19,6 +19,6 @@ permalink: /about/
 ### 联系我
 
 - GitHub: [@xuhe01](https://github.com/xuhe01)
-- Email: your-email@example.com
+- Email: 13508471072@163.com
 
 > 欢迎通过 Issue 或邮件与我交流！

@@ -12,7 +12,7 @@ tags: [GitHub Pages, Jekyll, 教程]
 
 ## 1. 创建仓库
 
-在 GitHub 上新建一个仓库，命名为 `USERNAME.github.io`（`USERNAME` 是你的 GitHub 用户名），设为 **Public**。
+在 GitHub 上新建一个仓库，命名为 `xuhe01.github.io`（`xuhe01` 是你的 GitHub 用户名），设为 **Public**。
 
 ## 2. 准备 Jekyll 站点
 
@@ -55,13 +55,13 @@ tags: [标签1, 标签2]
 ```bash
 git add .
 git commit -m "Initial blog"
-git remote add origin https://github.com/USERNAME/USERNAME.github.io.git
+git remote add origin https://github.com/xuhe01/xuhe01.github.io.git
 git push -u origin main
 ```
 
 然后到仓库 **Settings → Pages**，Source 选择 `Deploy from a branch`，Branch 选 `main` / `(root)`，保存。
 
-等一两分钟，访问 `https://USERNAME.github.io` 就能看到博客了。
+等一两分钟，访问 `https://xuhe01.github.io` 就能看到博客了。
 
 ## 5. 本地预览（可选）
 

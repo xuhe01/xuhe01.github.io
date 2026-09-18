@@ -1,8 +1,8 @@
 # 部署指南
 
-按照 [GitHub Pages 快速入门](https://docs.github.com/zh/pages/quickstart) 的步骤，把这个博客发布到 `https://USERNAME.github.io`。
+按照 [GitHub Pages 快速入门](https://docs.github.com/zh/pages/quickstart) 的步骤，把这个博客发布到 `https://xuhe01.github.io`。
 
-> 下文所有 `USERNAME` 请替换为你自己的 GitHub 用户名（注意全部小写）。
+> 下文所有 `xuhe01` 请替换为你自己的 GitHub 用户名（注意全部小写）。
 
 ---
 
@@ -12,7 +12,7 @@
 
 ```bash
 # macOS / Linux，一条命令全局替换
-grep -rl "USERNAME" --exclude-dir=.git --exclude-dir=_site . | xargs sed -i '' 's/USERNAME/你的github用户名/g'
+grep -rl "xuhe01" --exclude-dir=.git --exclude-dir=_site . | xargs sed -i '' 's/xuhe01/你的github用户名/g'
 ```
 
 另外手动编辑 `_config.yml` 中的 `title`、`description`、`author`、`email`，以及 `about.md` 中的自我介绍。
@@ -22,7 +22,7 @@ grep -rl "USERNAME" --exclude-dir=.git --exclude-dir=_site . | xargs sed -i '' '
 ## 第 1 步：在 GitHub 上创建仓库
 
 1. 登录 GitHub，点击右上角 **+** → **New repository**
-2. **Repository name** 填 `USERNAME.github.io`
+2. **Repository name** 填 `xuhe01.github.io`
    - ⚠️ 必须与你的用户名完全一致（大小写不敏感，但建议小写），否则不会成为「用户站点」
 3. 选择 **Public**（免费账号的 Pages 只支持公开仓库）
 4. **不要**勾选 "Add a README"（本地已经有了）
@@ -42,7 +42,7 @@ git config user.email "你的邮箱"
 git add .
 git commit -m "🎉 Initial blog with Jekyll"
 git branch -M main
-git remote add origin https://github.com/USERNAME/USERNAME.github.io.git
+git remote add origin https://github.com/xuhe01/xuhe01.github.io.git
 git push -u origin main
 ```
 
@@ -56,7 +56,7 @@ git push -u origin main
 1. 打开仓库页面 → **Settings** → 左侧 **Pages**
 2. **Build and deployment** → **Source** 选择 **Deploy from a branch**
 3. **Branch** 选择 `main`，目录选 `/ (root)`，点击 **Save**
-4. 等待 1~3 分钟，页面顶部会出现 ✅ *Your site is live at https://USERNAME.github.io*
+4. 等待 1~3 分钟，页面顶部会出现 ✅ *Your site is live at https://xuhe01.github.io*
 
 可以在仓库的 **Actions** 标签页看到名为 `pages build and deployment` 的工作流，绿色 ✔ 表示部署成功。
 
@@ -64,12 +64,12 @@ git push -u origin main
 
 ## 第 4 步：验证
 
-浏览器打开 `https://USERNAME.github.io`，应该能看到：
+浏览器打开 `https://xuhe01.github.io`，应该能看到：
 
 - 首页列出 3 篇示例文章
 - 顶部导航有「关于我」「归档」
 - 点击文章能进入详情页
-- `https://USERNAME.github.io/feed.xml` 输出 RSS
+- `https://xuhe01.github.io/feed.xml` 输出 RSS
 
 ---
 
@@ -152,14 +152,14 @@ jobs:
 1. 在域名 DNS 添加记录：
    - 顶级域名 `example.com`：4 条 **A** 记录指向
      `185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
-   - 子域名 `blog.example.com`：1 条 **CNAME** 记录指向 `USERNAME.github.io`
+   - 子域名 `blog.example.com`：1 条 **CNAME** 记录指向 `xuhe01.github.io`
 2. **Settings → Pages → Custom domain** 填入域名，保存
 3. 勾选 **Enforce HTTPS**（证书签发需要几分钟到一小时）
 4. 把 `_config.yml` 的 `url` 改为 `https://你的域名`
 
-### C. 项目站点（仓库名不是 USERNAME.github.io）
+### C. 项目站点（仓库名不是 xuhe01.github.io）
 
-如果仓库叫 `my-blog`，站点地址会是 `https://USERNAME.github.io/my-blog/`，此时必须在 `_config.yml` 里设置：
+如果仓库叫 `my-blog`，站点地址会是 `https://xuhe01.github.io/my-blog/`，此时必须在 `_config.yml` 里设置：
 
 ```yaml
 baseurl: "/my-blog"

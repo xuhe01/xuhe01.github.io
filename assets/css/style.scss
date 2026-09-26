@@ -122,12 +122,24 @@ img { max-width: 100%; border-radius: 8px; }
 .site-title {
   order: 1;
   margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: .04em;
   color: var(--heading);
 }
 .site-title:hover { color: var(--accent); text-decoration: none; }
+.site-title:hover .site-logo { opacity: .85; }
+.site-logo {
+  width: 27px;
+  height: 27px;
+  border-radius: 7px;
+  flex: none;
+  transition: opacity .2s, transform .2s;
+}
+.site-title:hover .site-logo { transform: rotate(-6deg) scale(1.05); }
 
 .site-nav {
   order: 3;
@@ -807,4 +819,44 @@ pre code {
   body { font-size: 16px; }
   .post-body h2, .page-body h2 { font-size: 1.28rem; }
   .post-header { margin-bottom: 32px; }
+}
+
+/* ---------- 沉浸阅读浮动按钮 ---------- */
+.immersive-btn {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 17px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-content);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(60, 45, 25, .16);
+  transition: color .2s, border-color .2s, background .2s, transform .2s;
+}
+.immersive-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-soft);
+  transform: translateY(-2px);
+}
+.immersive-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fffdf8;
+}
+
+/* 沉浸模式：收起两侧栏，正文居中 */
+body.immersive .sidenav { display: none; }
+body.immersive .post-sidebar { display: none; }
+body.immersive .shell { grid-template-columns: 1fr; }
+body.immersive .post-layout {
+  grid-template-columns: 1fr;
+  max-width: 850px;
 }

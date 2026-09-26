@@ -8,10 +8,12 @@
 {%- assign chars = pure | size -%}
 {%- assign minutes = chars | divided_by: 340 | at_least: 1 -%}
 <div class="post-meta{% if include.compact %} post-meta-compact{% endif %}">
+  {%- unless include.compact -%}
   <span class="meta-item">
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
     <time datetime="{{ meta_post.date | date_to_xmlschema }}">{{ meta_post.date | date: '%Y-%m-%d' }}</time>
   </span>
+  {%- endunless -%}
   <span class="meta-item">
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
     {{ minutes }} 分钟阅读

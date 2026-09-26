@@ -18,9 +18,11 @@
 ├── _posts/              # ✍️ 所有博客文章放这里
 │   └── YYYY-MM-DD-slug.md
 ├── _layouts/            # 页面模板（default / home / post / page）
-├── _includes/           # 可复用片段（目录、元信息、侧栏）
+├── _includes/           # 可复用片段（左侧总目录、此页内容、元信息）
+├── search.json          # 站内搜索索引（构建时自动生成）
 └── assets/
-    └── css/style.scss   # 全站样式（浅色/深色双主题）
+    ├── css/style.scss   # 全站样式（浅色/深色双主题）
+    └── js/search.js     # Ctrl+K 站内搜索
 ```
 
 ## 写一篇新文章

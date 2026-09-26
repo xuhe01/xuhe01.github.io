@@ -14,6 +14,9 @@ lang: zh-CN
 url: "https://xuhe01.github.io"
 baseurl: ""
 
+# GitHub 仓库（页头图标链接）
+github_url: "https://github.com/xuhe01/xuhe01.github.io"
+
 # ---------- 顶部导航（按需增删） ----------
 nav:
   - { name: "首页", url: "/" }

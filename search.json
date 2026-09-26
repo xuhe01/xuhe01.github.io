@@ -1,0 +1,17 @@
+---
+---
+[
+{%- assign comma = '' -%}
+{%- for post in site.posts -%}
+{{ comma }}
+{"type": "文章", "title": "{{ post.title | escape | strip_newlines }}", "url": "{{ post.url | relative_url | escape }}", "date": "{{ post.date | date: '%Y-%m-%d' }}", "excerpt": "{{ post.excerpt | strip_html | strip | truncate: 140 | escape | strip_newlines }}", "content": "{{ post.content | strip_html | escape | strip_newlines }}"}
+{%- assign comma = ',' -%}
+{%- endfor -%}
+{%- for p in site.pages -%}
+{%- if p.title and p.search != false and p.url != '/' -%}
+{{ comma }}
+{"type": "页面", "title": "{{ p.title | escape | strip_newlines }}", "url": "{{ p.url | relative_url | escape }}", "date": "", "excerpt": "{{ p.content | strip_html | strip | truncate: 140 | escape | strip_newlines }}", "content": "{{ p.content | strip_html | escape | strip_newlines }}"}
+{%- assign comma = ',' -%}
+{%- endif -%}
+{%- endfor -%}
+]

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="post-layout">
+  <article class="post-article">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% include post_meta.html post=page %}
+    </header>
+    <div class="post-body">
+      {{ content }}
+    </div>
+  </article>
+
+  <aside class="post-sidebar">
+    {% include sidebar.html post_html=content %}
+  </aside>
+</div>

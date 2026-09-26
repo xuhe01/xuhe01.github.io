@@ -10,11 +10,11 @@ tags: [GitHub Pages, Jekyll, 教程]
 
 <!--more-->
 
-## 1. 创建仓库
+## 创建仓库
 
 在 GitHub 上新建一个仓库，命名为 `xuhe01.github.io`（`xuhe01` 是你的 GitHub 用户名），设为 **Public**。
 
-## 2. 准备 Jekyll 站点
+## 准备 Jekyll 站点
 
 最少只需要三个文件：
 
@@ -35,7 +35,7 @@ plugins:
   - jekyll-feed
 ```
 
-## 3. 写文章
+## 写文章
 
 文章放在 `_posts/` 目录，文件名格式为 `YYYY-MM-DD-标题.md`，顶部要有 Front Matter：
 
@@ -50,7 +50,9 @@ tags: [标签1, 标签2]
 正文内容……
 ```
 
-## 4. 推送并启用 Pages
+## 推送并启用 Pages
+
+### 推送代码
 
 ```bash
 git add .
@@ -59,11 +61,13 @@ git remote add origin https://github.com/xuhe01/xuhe01.github.io.git
 git push -u origin main
 ```
 
+### 在网页上启用 Pages
+
 然后到仓库 **Settings → Pages**，Source 选择 `Deploy from a branch`，Branch 选 `main` / `(root)`，保存。
 
 等一两分钟，访问 `https://xuhe01.github.io` 就能看到博客了。
 
-## 5. 本地预览（可选）
+## 本地预览（可选）
 
 ```bash
 bundle install

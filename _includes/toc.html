@@ -1,0 +1,40 @@
+{% comment %}
+  纯 Liquid 目录：从渲染后的文章 HTML 中提取 h2/h3（含 kramdown 自动生成的锚点 id），
+  无需任何插件（GitHub Pages 白名单限制下也可用）。
+  用法: {% include toc.html html=content %}
+{% endcomment %}
+{%- assign src = include.html | replace: '<hr', '<xx' -%}
+{%- assign segs = src | split: '<h' -%}
+{%- assign n2 = 0 -%}
+{%- capture items %}{% endcapture -%}
+{%- for seg in segs -%}
+  {%- assign lvl = seg | slice: 0 -%}
+  {%- if lvl == '2' or lvl == '3' -%}
+    {%- if seg contains 'id="' -%}
+      {%- assign tail = seg | split: 'id="' -%}
+      {%- assign tail = tail[1] -%}
+      {%- assign heading_id = tail | split: '"' -%}
+      {%- assign heading_id = heading_id[0] -%}
+      {%- assign heading_txt = tail | split: '>' -%}
+      {%- assign heading_txt = heading_txt[1] -%}
+      {%- assign heading_txt = heading_txt | split: '</h' -%}
+      {%- assign heading_txt = heading_txt[0] | strip_html | strip -%}
+      {%- if heading_id != '' and heading_txt != '' -%}
+        {%- if lvl == '2' -%}
+          {%- assign n2 = n2 | plus: 1 -%}
+          {%- capture items %}{{ items }}<li class="toc-h2"><a href="#{{ heading_id }}"><span class="toc-num">{{ n2 }}.</span>{{ heading_txt }}</a></li>{% endcapture -%}
+        {%- else -%}
+          {%- capture items %}{{ items }}<li class="toc-h3"><a href="#{{ heading_id }}">{{ heading_txt }}</a></li>{% endcapture -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign items_clean = items | strip -%}
+{%- if items_clean == '' -%}
+<p class="toc-empty">本文没有小节标题</p>
+{%- else -%}
+<ol class="toc-list">
+{{ items }}
+</ol>
+{%- endif -%}

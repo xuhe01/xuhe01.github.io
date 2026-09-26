@@ -6,18 +6,21 @@
 
 ```
 .
-├── _config.yml          # 站点全局配置（标题、主题、插件、URL 等）
+├── _config.yml          # 站点全局配置（标题、导航、插件、URL）
 ├── Gemfile              # Ruby 依赖，本地预览用
 ├── index.md             # 首页（自动列出最新文章）
 ├── about.md             # 「关于我」页面
-├── archive.md           # 按年份归档所有文章
+├── archive.md           # 按年份归档
+├── categories.md        # 分类总览页
+├── tags.md              # 标签总览页
 ├── 404.md               # 自定义 404 页面
+├── favicon.svg          # 站点图标
 ├── _posts/              # ✍️ 所有博客文章放这里
 │   └── YYYY-MM-DD-slug.md
-├── _includes/           # 可复用的 HTML 片段（可选）
+├── _layouts/            # 页面模板（default / home / post / page）
+├── _includes/           # 可复用片段（目录、元信息、侧栏）
 └── assets/
-    ├── css/style.scss   # 自定义样式（覆盖主题）
-    └── images/          # 文章用到的图片
+    └── css/style.scss   # 全站样式（浅色/深色双主题）
 ```
 
 ## 写一篇新文章

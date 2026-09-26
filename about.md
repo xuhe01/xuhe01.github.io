@@ -8,7 +8,7 @@ permalink: /about/
 
 我是 **xuhe**，一名热爱技术与分享的开发者。
 
-这个博客使用 [Jekyll](https://jekyllrb.com/) 搭建，托管在 [GitHub Pages](https://pages.github.com/) 上，主题为 [Minima](https://github.com/jekyll/minima)。
+这个博客使用 [Jekyll](https://jekyllrb.com/) 搭建，托管在 [GitHub Pages](https://pages.github.com/) 上，界面是为它量身定制的自定义设计，支持深色 / 浅色模式切换。
 
 ### 我写什么
 

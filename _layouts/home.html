@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="narrow home">
+  <div class="home-intro">
+    {{ content }}
+  </div>
+
+  <h1 class="page-title">{{ page.list_title | default: '最新文章' }}</h1>
+
+  <ol class="post-list">
+    {%- for post in site.posts -%}
+    <li class="post-card">
+      <div class="post-card-date">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        {{ post.date | date: '%Y-%m-%d' }}
+      </div>
+      <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      {%- if post.excerpt and post.excerpt != '' -%}
+      <div class="post-card-excerpt">{{ post.excerpt }}</div>
+      {%- endif -%}
+      {% include post_meta.html post=post compact=true %}
+    </li>
+    {%- endfor -%}
+  </ol>
+</div>
